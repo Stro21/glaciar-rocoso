@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>List Of Maps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Map</th>
+      <th>Rock glacier</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @list_of_maps.each do |list_of_map| %>
+      <tr>
+        <td><%= list_of_map.user %></td>
+        <td><%= list_of_map.map %></td>
+        <td><%= list_of_map.rock_glacier %></td>
+        <td><%= link_to 'Show', list_of_map %></td>
+        <td><%= link_to 'Edit', edit_list_of_map_path(list_of_map) %></td>
+        <td><%= link_to 'Destroy', list_of_map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New List Of Map', new_list_of_map_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @list_of_map.user %>
+</p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @list_of_map.map %>
+</p>
+
+<p>
+  <strong>Rock glacier:</strong>
+  <%= @list_of_map.rock_glacier %>
+</p>
+
+<%= link_to 'Edit', edit_list_of_map_path(@list_of_map) %> |
+<%= link_to 'Back', list_of_maps_path %>

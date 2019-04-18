@@ -1,0 +1,32 @@
+<%= form_with(model: list_of_map, local: true) do |form| %>
+  <% if list_of_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(list_of_map.errors.count, "error") %> prohibited this list_of_map from being saved:</h2>
+
+      <ul>
+      <% list_of_map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :map_id %>
+    <%= form.text_field :map_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rock_glacier %>
+    <%= form.text_field :rock_glacier %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
