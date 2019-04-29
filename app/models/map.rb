@@ -20,7 +20,9 @@ class Map < ApplicationRecord
   end
 
   def center
-    center = self.latitude.to_s + "," + self.longitude.to_s
+    lat = (self.latitude * -1).to_s
+    longi = (self.longitude * -1).to_s 
+    lat + "," + longi
   end
 
   def size
