@@ -13,6 +13,7 @@ class Map < ApplicationRecord
 
   def generate_zoom
     if self.zoom.nil?
+      self.zoom = 18
       '&zoom=18'
     else
       '&zoom=' + self.zoom.to_s
@@ -29,6 +30,8 @@ class Map < ApplicationRecord
     if !self.width.nil? && !self.height.nil?
       '&size=' + self.width.to_s + 'x' + self.height.to_s
     else
+      self.width = 800
+      self.height = 800
       '&size=800x800'
     end
   end
