@@ -4,6 +4,10 @@ class Map < ApplicationRecord
   has_many :maps_lists
   has_many :users, through: :maps_lists
 
+  require 'googlemaps/services/client'
+  require 'googlemaps/services/elevation'
+  include GoogleMaps::Services
+
   def add_remaining_data
     set_key
     set_url
@@ -27,8 +31,10 @@ class Map < ApplicationRecord
   end
 
   def center
-    lat = (self.latitude * -1).to_s
-    longi = (self.longitude * -1).to_s 
+    self.latitude = self.latitude * -1
+    self.longitude = self.longitude * -1
+    lat = self.latitude.to_s
+    longi = self.longitude.to_s 
     lat + "," + longi
   end
 
@@ -47,10 +53,10 @@ class Map < ApplicationRecord
   end
 
   def set_elevation
-    require 'google_maps_service'
-    gmaps = GoogleMapsService::Client.new(key: self.key)
-    location = [self.latitude, self.longitude]
-    results = gmaps.elevation(location)
-    self.elevation = results
+    client = GoogleClient.new(key: self.key, response_format: :json)
+    elevation = GoogleMaps::Services::Elevation.new(client)
+    result = elevation.query(locations: [{:lat => self.latitude, :lng => self.longitude}])
+    hash = result[0]
+    self.elevation = hash["elevation"].to_i
   end
 end
