@@ -47,9 +47,10 @@ class Map < ApplicationRecord
   end
 
   def set_elevation
+    require 'google_maps_service'
     gmaps = GoogleMapsService::Client.new(key: self.key)
-    elevation = gmaps.elevation([self.latitude, self.longitude])
-    print elevation.to_s
-    self.elevation = elevation
+    location = [self.latitude, self.longitude]
+    results = gmaps.elevation(location)
+    self.elevation = results
   end
 end
