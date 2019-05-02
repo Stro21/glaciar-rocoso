@@ -1,17 +1,17 @@
 class Map < ApplicationRecord
-  before_create :generate_url
+  before_create :set_url
 
   has_many :maps_lists
   has_many :users, through: :maps_lists
 
-  def generate_url
+  def set_url
 
-    url = 'https://maps.googleapis.com/maps/api/staticmap?center=' + center + generate_zoom
+    url = 'https://maps.googleapis.com/maps/api/staticmap?center=' + center + set_zoom
     url += size + '&maptype=satellite&key=AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE'
     self.url = url
   end
 
-  def generate_zoom
+  def set_zoom
     if self.zoom.nil?
       self.zoom = 18
       '&zoom=18'
