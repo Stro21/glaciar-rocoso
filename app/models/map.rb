@@ -1,13 +1,19 @@
 class Map < ApplicationRecord
-  before_create :set_url
+  before_create :add_remaining_data
 
   has_many :maps_lists
   has_many :users, through: :maps_lists
 
+  def add_remaining_data
+    set_key
+    set_url
+    set_elevation
+  end
+
   def set_url
 
     url = 'https://maps.googleapis.com/maps/api/staticmap?center=' + center + set_zoom
-    url += size + '&maptype=satellite&key=AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE'
+    url += size + '&maptype=satellite&key=' + self.key
     self.url = url
   end
 
@@ -36,7 +42,14 @@ class Map < ApplicationRecord
     end
   end
 
+  def set_key
+    self.key = 'AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE'
+  end
+
   def set_elevation
-    
+    gmaps = GoogleMapsService::Client.new(key: self.key)
+    elevation = gmaps.elevation([self.latitude, self.longitude])
+    print elevation.to_s
+    self.elevation = elevation
   end
 end
