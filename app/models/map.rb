@@ -35,4 +35,8 @@ class Map < ApplicationRecord
       '&size=800x800'
     end
   end
+
+  def set_elevation
+    
+  end
 end
