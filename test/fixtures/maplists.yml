@@ -3,9 +3,9 @@
 one:
   user: one
   map: one
-  rock_glacier: 
+  glaciar_rock: false
 
 two:
   user: two
   map: two
-  rock_glacier: 
+  glaciar_rock: false

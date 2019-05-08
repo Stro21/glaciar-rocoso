@@ -1,9 +1,9 @@
-class CreateListOfMaps < ActiveRecord::Migration[5.2]
+class CreateMaplists < ActiveRecord::Migration[5.2]
   def change
-    create_table :list_of_maps do |t|
+    create_table :maplists do |t|
       t.references :user, foreign_key: true
       t.references :map, foreign_key: true
-      t.boolean :rock_glacier
+      t.boolean :glaciar_rock
 
       t.timestamps
     end

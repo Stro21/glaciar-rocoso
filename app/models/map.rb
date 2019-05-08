@@ -1,12 +1,12 @@
 class Map < ApplicationRecord
   before_create :add_remaining_data
 
-  has_many :maps_lists
-  has_many :users, through: :maps_lists
-
   require 'googlemaps/services/client'
   require 'googlemaps/services/elevation'
   include GoogleMaps::Services
+
+  has_many :mapslists
+  has_many :users, through: :mapslists
 
   def add_remaining_data
     set_key

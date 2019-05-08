@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ListOfMapTest < ActiveSupport::TestCase
+class MaplistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_040022) do
+ActiveRecord::Schema.define(version: 2019_05_08_020607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "list_of_maps", force: :cascade do |t|
+  create_table "maplists", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "map_id"
-    t.boolean "rock_glacier"
+    t.boolean "glaciar_rock"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["map_id"], name: "index_list_of_maps_on_map_id"
-    t.index ["user_id"], name: "index_list_of_maps_on_user_id"
+    t.index ["map_id"], name: "index_maplists_on_map_id"
+    t.index ["user_id"], name: "index_maplists_on_user_id"
   end
 
   create_table "maps", force: :cascade do |t|
@@ -51,6 +51,6 @@ ActiveRecord::Schema.define(version: 2019_05_02_040022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "list_of_maps", "maps"
-  add_foreign_key "list_of_maps", "users"
+  add_foreign_key "maplists", "maps"
+  add_foreign_key "maplists", "users"
 end

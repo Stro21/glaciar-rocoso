@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @maplist.user %>
+</p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @maplist.map %>
+</p>
+
+<p>
+  <strong>Glaciar rock:</strong>
+  <%= @maplist.glaciar_rock %>
+</p>
+
+<%= link_to 'Edit', edit_maplist_path(@maplist) %> |
+<%= link_to 'Back', maplists_path %>
