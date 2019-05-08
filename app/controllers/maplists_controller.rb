@@ -1,5 +1,6 @@
 class MaplistsController < ApplicationController
   before_action :set_maplist, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /maplists
   # GET /maplists.json
@@ -25,7 +26,7 @@ class MaplistsController < ApplicationController
   # POST /maplists.json
   def create
     @maplist = Maplist.new(maplist_params)
-
+    @maplist.user = current_user
     respond_to do |format|
       if @maplist.save
         format.html { redirect_to @maplist, notice: 'Maplist was successfully created.' }
