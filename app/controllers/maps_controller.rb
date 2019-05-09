@@ -26,7 +26,7 @@ class MapsController < ApplicationController
   # POST /maps.json
   def create
     @map = Map.new(map_params)
-
+    @map.user = current_user
     respond_to do |format|
       if @map.save
         format.html { redirect_to @map, notice: 'Map was successfully created.' }
@@ -70,6 +70,6 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:latitude, :longitude, :zoom, :width, :height)
+      params.require(:map).permit(:user_id, :latitude, :longitude, :zoom, :width, :height, :glaciar_rock)
     end
 end

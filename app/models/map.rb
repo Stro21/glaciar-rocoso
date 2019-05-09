@@ -11,6 +11,9 @@ class Map < ApplicationRecord
     set_key
     set_url
     set_elevation
+    if self.glaciar_rock.nil?
+      self.glaciar_rock = false
+    end
   end
 
   def set_url
