@@ -44,6 +44,8 @@
   <strong>User:</strong>
   <%= @map.user.username %>
 </p>
-
+<br>
+<img class="responsive" href="<%= @map.url %>" alt="Mapa">
+<br>
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>

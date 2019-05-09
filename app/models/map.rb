@@ -38,13 +38,9 @@ class Map < ApplicationRecord
   end
 
   def size
-    if !self.width.nil? && !self.height.nil?
-      '&size=' + self.width.to_s + 'x' + self.height.to_s
-    else
-      self.width = 800
-      self.height = 800
-      '&size=800x800'
-    end
+    self.width = 640
+    self.height = 640
+    '&size=800x800'
   end
 
   def set_key
