@@ -35,5 +35,15 @@
   <%= @map.height %>
 </p>
 
+<p>
+  <strong>Glaciar Rock:</strong>
+  <%= @map.glaciar_rock %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @map.user.username %>
+</p>
+
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>
