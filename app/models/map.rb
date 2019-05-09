@@ -40,7 +40,7 @@ class Map < ApplicationRecord
   def size
     self.width = 640
     self.height = 640
-    '&size=800x800'
+    '&size=640x640'
   end
 
   def set_key
