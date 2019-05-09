@@ -5,8 +5,7 @@ class Map < ApplicationRecord
   require 'googlemaps/services/elevation'
   include GoogleMaps::Services
 
-  has_many :mapslists
-  has_many :users, through: :mapslists
+  belongs_to :user
 
   def add_remaining_data
     set_key
