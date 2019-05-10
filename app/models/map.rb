@@ -8,7 +8,8 @@ class Map < ApplicationRecord
   belongs_to :user
 
   def add_remaining_data
-    set_key
+    self.key = 'AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE'
+    self.size = '640x640'
     set_url
     set_elevation
     if self.glaciar_rock.nil?
@@ -18,7 +19,7 @@ class Map < ApplicationRecord
 
   def set_url
     url = 'https://maps.googleapis.com/maps/api/staticmap?center=' + center + set_zoom
-    url += size + '&maptype=satellite&key=' + self.key
+    url += '&size=' + self.size + '&maptype=satellite&key=' + self.key
     self.url = url
   end
 
@@ -35,16 +36,6 @@ class Map < ApplicationRecord
     lat = self.latitude.to_s
     longi = self.longitude.to_s 
     lat + "," + longi
-  end
-
-  def size
-    self.width = 640
-    self.height = 640
-    '&size=640x640'
-  end
-
-  def set_key
-    self.key = 'AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE'
   end
 
   def set_elevation

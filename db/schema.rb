@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_09_002522) do
+ActiveRecord::Schema.define(version: 2019_05_10_125924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,12 @@ ActiveRecord::Schema.define(version: 2019_05_09_002522) do
     t.string "url"
     t.integer "elevation"
     t.integer "zoom"
-    t.integer "width"
-    t.integer "height"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "key"
     t.bigint "user_id"
     t.boolean "glaciar_rock"
+    t.string "size"
     t.index ["user_id"], name: "index_maps_on_user_id"
   end
 
