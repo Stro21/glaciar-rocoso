@@ -1,10 +1,10 @@
-<%= form_with(model: map, local: true) do |form| %>
-  <% if map.errors.any? %>
+<%= form_with(model: @map) do |form| %>
+  <% if @map.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(map.errors.count, "error") %> prohibited this map from being saved:</h2>
+      <h2><%= pluralize(@map.errors.count, "error") %> prohibited this map from being saved:</h2>
 
       <ul>
-      <% map.errors.full_messages.each do |message| %>
+      <% @map.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

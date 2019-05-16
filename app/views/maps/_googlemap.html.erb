@@ -1,0 +1,22 @@
+<div id="googlemap" style="width:800px;height:800px"></div>
+
+<p><button onclick="document.getElementById('demoCenter').innerHTML = map.getCenter()">Get map center</button></p>
+
+<h1>Center of the map</h1>
+<div id="demoCenter"></div>
+
+<script>
+  var map;
+  function myMap() {
+    var mapCanvas = document.getElementById("googlemap");
+    var mapOptions = {
+      center: new google.maps.LatLng(-33.688, -70.177),
+      zoom: 18,
+      mapTypeId: "satellite",
+      disableDefaultUI: true
+    };
+    map = new google.maps.Map(mapCanvas, mapOptions);
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE&callback=myMap"></script>

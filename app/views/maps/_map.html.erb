@@ -1,22 +1,13 @@
-<div id="map" style="width:800px;height:800px"></div>
-
-<p><button onclick="document.getElementById('demoCenter').innerHTML = map.getCenter()">Get map center</button></p>
-
-<h1>Center of the map</h1>
-<div id="demoCenter"></div>
-
-<script>
-  var map;
-  function myMap() {
-    var mapCanvas = document.getElementById("map");
-    var mapOptions = {
-      center: new google.maps.LatLng(-33.688, -70.177),
-      zoom: 18,
-      mapTypeId: "satellite",
-      disableDefaultUI: true
-    };
-    map = new google.maps.Map(mapCanvas, mapOptions);
-  }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE&callback=myMap"></script>
+<tr>
+  <td><%= map.name %></td>
+  <td><%= map.latitude %></td>
+  <td><%= map.longitude %></td>
+  <td><%= map.url %></td>
+  <td><%= map.elevation %></td>
+  <td><%= map.zoom %></td>
+  <td><%= map.glaciar_rock %></td>
+  <td><%= map.user.username %></td>
+  <td><%= link_to 'Show', map %></td>
+  <td><%= link_to 'Edit', edit_map_path(map) %></td>
+  <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

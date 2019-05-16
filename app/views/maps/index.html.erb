@@ -2,7 +2,7 @@
 
 <h1>Maps</h1>
 
-<table>
+<table id="map">
   <thead>
     <tr>
       <th>Name</th>
@@ -38,4 +38,10 @@
 
 <br>
 
-<%= link_to 'New Map', new_map_path %>
+<%#= link_to 'New Map', new_map_path %>
+
+<h2>New post</h2>
+
+<%= render 'form', map: @map %>
+<br>
+<%= render 'googlemap', map: @map %>
