@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Url</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @maps.each do |map| %>
       <tr>
+        <td><%= map.name %></td>
         <td><%= map.latitude %></td>
         <td><%= map.longitude %></td>
         <td><%= map.url %></td>
