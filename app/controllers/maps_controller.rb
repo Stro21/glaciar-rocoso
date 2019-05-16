@@ -30,6 +30,7 @@ class MapsController < ApplicationController
     @map.user = current_user
     respond_to do |format|
       if @map.save
+        format.js
         format.html { redirect_to @map, notice: 'Map was successfully created.' }
         format.json { render :show, status: :created, location: @map }
       else
