@@ -59,6 +59,7 @@ class MapsController < ApplicationController
   def destroy
     @map.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to maps_url, notice: 'Map was successfully destroyed.' }
       format.json { head :no_content }
     end
