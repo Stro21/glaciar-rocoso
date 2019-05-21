@@ -19,7 +19,7 @@
 
   <tbody>
     <% @maps.each do |map| %>
-      <tr>
+      <tr id="<%= map.id %>">
         <td><%= map.name %></td>
         <td><%= map.latitude %></td>
         <td><%= map.longitude %></td>
@@ -37,8 +37,6 @@
 </table>
 
 <br>
-
-<%#= link_to 'New Map', new_map_path %>
 
 <h2>New post</h2>
 
