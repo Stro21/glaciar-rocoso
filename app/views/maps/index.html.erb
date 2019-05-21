@@ -28,9 +28,9 @@
         <td><%= map.zoom %></td>
         <td><%= map.glaciar_rock %></td>
         <td><%= map.user.username %></td>
-        <td><%= link_to 'Show', map %></td>
-        <td><%= link_to 'Edit', edit_map_path(map) %></td>
-        <td><%= link_to 'Destroy', map, method: :delete, data: { remote: true, confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', map, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_map_path(map), class: "btn btn-info" %></td>
+        <td><%= link_to 'Destroy', map, method: :delete, data: { remote: true, confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
       </tr>
     <% end %>
   </tbody>
