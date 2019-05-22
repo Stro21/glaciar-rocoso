@@ -8,7 +8,6 @@
       <th>Name</th>
       <th>Latitude</th>
       <th>Longitude</th>
-      <th>Url</th>
       <th>Elevation</th>
       <th>Zoom</th>
       <th>Glaciar Rock</th>
@@ -20,10 +19,9 @@
   <tbody>
     <% @maps.each do |map| %>
       <tr id="<%= map.id %>">
-        <td><%= map.name %></td>
+        <td><a href="<%= map.url %>"><%= map.name %></a></td>
         <td><%= map.latitude %></td>
         <td><%= map.longitude %></td>
-        <td><%= map.url %></td>
         <td><%= map.elevation %></td>
         <td><%= map.zoom %></td>
         <td><%= map.glaciar_rock %></td>
