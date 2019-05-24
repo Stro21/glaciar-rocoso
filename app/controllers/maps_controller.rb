@@ -1,6 +1,6 @@
 class MapsController < ApplicationController
-  before_action :set_map, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /maps
   # GET /maps.json
@@ -66,11 +66,6 @@ class MapsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_map
-      @map = Map.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
       params.require(:map).permit(:user_id, :latitude, :longitude, :zoom, :glaciar_rock, :name)
