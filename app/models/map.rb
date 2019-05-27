@@ -5,7 +5,7 @@ class Map < ApplicationRecord
   require 'googlemaps/services/elevation'
   include GoogleMaps::Services
 
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
 
   def add_remaining_data
     self.key = 'AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE'

@@ -31,6 +31,8 @@
     <%= form.check_box :glaciar_rock, id: "glaciar_rock" %>
   </div>
 
+  <%= render 'googlemap', map: @map %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
