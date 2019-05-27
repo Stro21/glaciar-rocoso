@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_161620) do
+ActiveRecord::Schema.define(version: 2019_05_27_204906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "maps", force: :cascade do |t|
-    t.decimal "latitude"
-    t.decimal "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.string "url"
     t.integer "elevation"
     t.integer "zoom"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_05_24_161620) do
     t.boolean "glaciar_rock"
     t.string "size"
     t.string "name"
+    t.string "center"
     t.index ["user_id"], name: "index_maps_on_user_id"
   end
 

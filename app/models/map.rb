@@ -18,7 +18,7 @@ class Map < ApplicationRecord
   end
 
   def set_url
-    url = 'https://maps.googleapis.com/maps/api/staticmap?center=' + center + set_zoom
+    url = 'https://maps.googleapis.com/maps/api/staticmap?center=' + get_center + set_zoom
     url += '&size=' + self.size + '&maptype=satellite&key=' + self.key
     self.url = url
   end
@@ -31,10 +31,27 @@ class Map < ApplicationRecord
       '&zoom=' + self.zoom.to_s
     end
   end
-
-  def center
-    lat = self.latitude.to_s
-    longi = self.longitude.to_s 
+  
+  def get_center
+    lat = ""
+    longi = ""
+    # lat = self.latitude.to_s
+    # longi = self.longitude.to_s
+    is_lat = true
+    coordinates = self.center.tr('(),', '')
+    coordinates.each_char do |i|
+      if is_lat
+        if i == " "
+          is_lat = false
+        else
+          lat.insert(-1, i)
+        end
+      else
+        longi.insert(-1, i)
+      end
+    end
+    self.latitude = lat.to_f
+    self.longitude = longi.to_f
     lat + "," + longi
   end
 
