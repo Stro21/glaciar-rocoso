@@ -15,6 +15,9 @@ class Map < ApplicationRecord
     if self.glaciar_rock.nil?
       self.glaciar_rock = false
     end
+    if self.name.nil? || self.name == ''
+      self.name = 'Mapa' + (Map.last.id - 1).to_s
+    end
   end
 
   def set_url
