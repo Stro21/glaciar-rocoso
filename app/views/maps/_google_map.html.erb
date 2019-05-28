@@ -1,0 +1,26 @@
+<div id="googlemap" style="width:640px;height:640px"></div>
+
+<p><button onclick="putCenter()">Submit</button></p>
+
+<script>
+  var map;
+  function myMap() {
+    var mapCanvas = document.getElementById("googlemap");
+    var lat = document.getElementById('latitude').innerHTML;
+    var longi = document.getElementById('longitude').innerHTML;
+    var current_zoom = parseInt($('#zoom').val());
+    var mapOptions = {
+      center: new google.maps.LatLng(lat, longi),
+      zoom: current_zoom,
+      mapTypeId: "satellite",
+      disableDefaultUI: true
+    };
+    map = new google.maps.Map(mapCanvas, mapOptions);
+  }
+  function putCenter() {
+    document.getElementById('center').value = map.getCenter();
+    document.getElementById('zoom').value = map.zoom;
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE&callback=myMap"></script>
