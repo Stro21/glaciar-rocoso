@@ -16,7 +16,11 @@ class Map < ApplicationRecord
       self.glaciar_rock = false
     end
     if self.name.nil? || self.name == ''
-      self.name = 'Mapa' + (Map.last.id - 1).to_s
+      if Map.last.nil?
+        self.name = 'Mapa1'
+      else
+        self.name = 'Mapa' + (Map.last.id - 1).to_s
+      end
     end
   end
 
