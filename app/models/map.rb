@@ -1,5 +1,6 @@
 class Map < ApplicationRecord
   before_create :add_remaining_data
+  before_update :edit_data
 
   require 'googlemaps/services/client'
   require 'googlemaps/services/elevation'
@@ -38,28 +39,13 @@ class Map < ApplicationRecord
       '&zoom=' + self.zoom.to_s
     end
   end
-  
+
   def get_center
-    lat = ""
-    longi = ""
-    # lat = self.latitude.to_s
-    # longi = self.longitude.to_s
-    is_lat = true
     coordinates = self.center.tr('(),', '')
-    coordinates.each_char do |i|
-      if is_lat
-        if i == " "
-          is_lat = false
-        else
-          lat.insert(-1, i)
-        end
-      else
-        longi.insert(-1, i)
-      end
-    end
-    self.latitude = lat.to_f
-    self.longitude = longi.to_f
-    lat + "," + longi
+    latlongi = coordinates.split(' ')
+    self.latitude = latlongi[0].to_f
+    self.longitude = latlongi[1].to_f
+    latlongi[0] + ',' + latlongi[1]
   end
 
   def set_elevation
@@ -68,5 +54,10 @@ class Map < ApplicationRecord
     result = elevation.query(locations: [{:lat => self.latitude, :lng => self.longitude}])
     hash = result[0]
     self.elevation = hash["elevation"].to_i
+  end
+
+  def edit_data
+    set_url
+    set_elevation
   end
 end
