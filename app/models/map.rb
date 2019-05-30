@@ -61,13 +61,28 @@ class Map < ApplicationRecord
   def edit_data
     set_url
     set_elevation
+    weather
   end
 
   def weather
+    generate_json
+    add_weather_data
+  end
+
+  def generate_json
     weather = 'https://api.openweathermap.org/data/2.5/weather?'
     weather += 'lat=' + self.latitude.to_s + '&'
     weather += 'lon=' + self.longitude.to_s + '&'
-    weather += '&appid=' + self.weather_key
-    self.weather_url = weather
+    weather += '&appid=' + self.weather_key + '&'
+    weather += 'units=metric'
+    self.weather_json = weather
+  end
+
+  def add_weather_data
+    require 'open-uri'
+    json = JSON.load(open(self.weather_json))
+    json.symbolize_keys!
+    json.deep_symbolize_keys!
+    self.temperature = json[:main][:temp]
   end
 end

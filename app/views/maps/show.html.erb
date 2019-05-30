@@ -31,6 +31,11 @@
 </p>
 
 <p>
+  <strong>Temperature:</strong>
+  <%= @map.temperature.to_s + ' °C' %>
+</p>
+
+<p>
   <strong>Zoom:</strong>
   <%= @map.zoom %>
 </p>
@@ -46,8 +51,8 @@
 </p>
 
 <p>
-  <strong>Weather Url:</strong>
-  <a href="<%= @map.weather_url %>"><%= @map.weather_url %></a>
+  <strong>Weather JSON:</strong>
+  <a href="<%= @map.weather_json %>"><%= @map.weather_json %></a>
 </p>
 
 <p>
