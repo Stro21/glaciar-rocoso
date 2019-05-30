@@ -11,6 +11,7 @@ class Map < ApplicationRecord
   def add_remaining_data
     self.key = 'AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE'
     self.size = '640x640'
+    self.weather_key = '69a465ccc34193baf8afa4d3a3dc6289'
     set_url
     set_elevation
     if self.glaciar_rock.nil?
@@ -23,6 +24,7 @@ class Map < ApplicationRecord
         self.name = 'Mapa' + (Map.last.id - 1).to_s
       end
     end
+    weather
   end
 
   def set_url
@@ -59,5 +61,13 @@ class Map < ApplicationRecord
   def edit_data
     set_url
     set_elevation
+  end
+
+  def weather
+    weather = 'https://api.openweathermap.org/data/2.5/weather?'
+    weather += 'lat=' + self.latitude.to_s + '&'
+    weather += 'lon=' + self.longitude.to_s + '&'
+    weather += '&appid=' + self.weather_key
+    self.weather_url = weather
   end
 end
