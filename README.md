@@ -1,24 +1,10 @@
 # Proyecto de Glaciares Rocos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta aplicación te permite poder agregar una foto satelital utilizando Google Maps, dándote la información de su latitud, longitud, altura y temperatura.
 
-Things you may want to cover:
+Para poder usar la aplicación hay que hacer los siguientes pasos:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1) Iniciar sesión o crear un nuevo usuario.
+2) Con el mapa de Google Maps, buscar una imagen que se quiera guardar (como por ejemplo un glaciar rocoso).
+3) Seleccionar o el checkbox de glaciar rocoso en caso de ser uno. En caso de no serlo, no marcar esa opción.
+4) Apretar el botón submit.
