@@ -61,6 +61,9 @@ class Map < ApplicationRecord
   def edit_data
     set_url
     set_elevation
+    if self.weather_key.nil?
+      self.weather_key = '69a465ccc34193baf8afa4d3a3dc6289'
+    end
     weather
   end
 
@@ -73,8 +76,8 @@ class Map < ApplicationRecord
     weather = 'https://api.openweathermap.org/data/2.5/weather?'
     weather += 'lat=' + self.latitude.to_s + '&'
     weather += 'lon=' + self.longitude.to_s + '&'
-    weather += '&appid=' + self.weather_key + '&'
-    weather += 'units=metric'
+    weather += '&appid=' + self.weather_key
+    weather += '&units=metric'
     self.weather_json = weather
   end
 
