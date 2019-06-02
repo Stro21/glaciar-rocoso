@@ -1,12 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="<% maps_path %>">All maps<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<% my_maps_path %>">Mis mapas</a>
-      </li>
+      <% if current_page?(root_path) %>
+        <li class="nav-item active">
+          <a class="nav-link" href="/">All maps<span class="sr-only">(current)</span></a>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <a class="nav-link" href="/">All maps</a>
+        </li>
+      <% end %>
+      <% if current_page?(my_maps_path) %>
+        <li class="nav-item active">
+          <a class="nav-link" href="/my_maps">My maps<span class="sr-only">(current)</span></a>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <a class="nav-link" href="/my_maps">My maps</a>
+        </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="/">Glaciares Rocosos</a>
       </li>
