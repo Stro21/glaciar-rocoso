@@ -5,7 +5,7 @@
         <a class="nav-link" href="<% maps_path %>">All maps<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Mis mapas</a>
+        <a class="nav-link" href="<% my_maps_path %>">Mis mapas</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/">Glaciares Rocosos</a>
@@ -15,7 +15,11 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= current_user.username %>
+          <% if current_user.nil? %>
+            <%= 'Guest' %>
+          <% else %>
+            <%= current_user.username %>
+          <% end %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>

@@ -23,6 +23,9 @@ class MapsController < ApplicationController
   def edit
   end
 
+  def my_maps
+  end
+
   # POST /maps
   # POST /maps.json
   def create
