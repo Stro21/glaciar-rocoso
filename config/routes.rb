@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'maps#index'
   get '/my_maps', to: 'maps#my_maps'
   get 'glaciar_rock', to: 'maps#glaciar_rock'
+  get 'not_glaciar_rock', to: 'maps#not_glaciar_rock'
 end

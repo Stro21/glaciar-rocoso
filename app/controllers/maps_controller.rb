@@ -26,6 +26,10 @@ class MapsController < ApplicationController
   def my_maps
   end
 
+  def not_glaciar_rock
+    @maps = Map.all
+  end
+
   def glaciar_rock
     @maps = Map.all
   end
