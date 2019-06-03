@@ -26,6 +26,9 @@ class MapsController < ApplicationController
   def my_maps
   end
 
+  def glaciar_rock
+  end
+
   # POST /maps
   # POST /maps.json
   def create

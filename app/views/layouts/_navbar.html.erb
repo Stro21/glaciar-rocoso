@@ -19,9 +19,15 @@
           <a class="nav-link" href="/my_maps">My maps</a>
         </li>
       <% end %>
-      <li class="nav-item">
-        <a class="nav-link" href="/">Glaciares Rocosos</a>
-      </li>
+      <% if current_page?(glaciar_rock_path) %>
+        <li class="nav-item active">
+          <a class="nav-link" href="/glaciar_rock">Glaciar Rocks<span class="sr-only">(current)</span></a>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <a class="nav-link" href="/glaciar_rock">Glaciar Rocks</a>
+        </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="/">No es Glaciar Rocoso</a>
       </li>
