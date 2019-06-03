@@ -27,6 +27,7 @@ class MapsController < ApplicationController
   end
 
   def glaciar_rock
+    @maps = Map.all
   end
 
   # POST /maps
