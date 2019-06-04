@@ -20,4 +20,4 @@
   }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE&callback=myMap"></script>
+<script src=<%= "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}&callback=myMap" %>></script>
