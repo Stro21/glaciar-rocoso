@@ -9,9 +9,9 @@ class Map < ApplicationRecord
   belongs_to :user
 
   def add_remaining_data
-    self.key = 'AIzaSyBvhG9cq8ZPTw306RIWY6DLMyEU6eiBokE'
+    self.key = ENV["googlemap_api_key"]
     self.size = '640x640'
-    self.weather_key = '69a465ccc34193baf8afa4d3a3dc6289'
+    self.weather_key = ENV["openweathermap_api_key"]
     set_url
     set_elevation
     if self.glaciar_rock.nil?
@@ -62,7 +62,7 @@ class Map < ApplicationRecord
     set_url
     set_elevation
     if self.weather_key.nil?
-      self.weather_key = '69a465ccc34193baf8afa4d3a3dc6289'
+      self.weather_key = ENV["openweathermap_api_key"]
     end
     weather
   end
