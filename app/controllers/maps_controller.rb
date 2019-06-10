@@ -24,6 +24,7 @@ class MapsController < ApplicationController
   end
 
   def my_maps
+    byebug
   end
 
   def not_glaciar_rock
