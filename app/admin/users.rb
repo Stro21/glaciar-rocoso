@@ -43,4 +43,8 @@ ActiveAdmin.register User do
       super
     end
   end
+
+  filter :email, as: :select
+  filter :username, as: :select
+  filter :created_at
 end
