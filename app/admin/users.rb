@@ -14,6 +14,11 @@ ActiveAdmin.register User do
   index do
     column :id
     column :email
+    column :username
     column :created_at
+    column :member_since do |user|
+      time_ago_in_words(user.created_at)
+    end
+    actions
   end
 end
