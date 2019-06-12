@@ -3,7 +3,9 @@ ActiveAdmin.register Map do
 
   index do
     column :id
-    column :url
+    column :name do |map|
+      link_to map.name, admin_map_path(map)
+    end
     column :center
     column :temperature
     column :elevation
