@@ -12,7 +12,7 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-  permit_params :username, :email, :password
+  permit_params :username, :email, :password, :role
 
   index do
     column :id
@@ -30,6 +30,7 @@ ActiveAdmin.register User do
       input :username
       input :email
       input :password
+      input :role
     end
     actions
   end
