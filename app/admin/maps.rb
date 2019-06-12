@@ -12,7 +12,7 @@ ActiveAdmin.register Map do
 #   permitted
 # end
 
-  permit_params :center, :glaciar_rock
+  permit_params :center, :glaciar_rock, :user_id
 
   index do
     column :id
@@ -30,6 +30,7 @@ ActiveAdmin.register Map do
     inputs 'Add a new map' do
       input :center
       input :glaciar_rock
+      input :user
     end
     actions
   end
