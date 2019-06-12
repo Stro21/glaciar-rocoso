@@ -34,4 +34,10 @@ ActiveAdmin.register Map do
     end
     actions
   end
+
+  filter :temperature, as: :numeric
+  filter :elevation, as: :numeric
+  filter :glaciar_rock, as: :select
+  filter :zoom, as: :numeric
+  filter :user, as: :select
 end
