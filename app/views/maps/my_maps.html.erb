@@ -16,20 +16,18 @@
   </thead>
 
   <tbody>
-    <% @maps.each do |map| %>
-      <% if map.user_id = current_user.id %>
-        <tr id="<%= map.id %>">
-          <td><a href="<%= map.url %>"><%= map.name %></a></td>
-          <td><%= map.center %></td>
-          <td><%= map.elevation %></td>
-          <td><%= map.temperature %></td>
-          <td><%= map.zoom %></td>
-          <td><%= map.glaciar_rock %></td>
-          <td><%= link_to 'Show', map, class: "btn btn-info" %></td>
-          <td><%= link_to 'Edit', edit_map_path(map), class: "btn btn-info" %></td>
-          <td><%= link_to 'Destroy', map, method: :delete, data: { remote: true, confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
-        </tr>
-      <% end %>
+    <% @current_user_maps.each do |map| %>
+      <tr id="<%= map.id %>">
+        <td><a href="<%= map.url %>"><%= map.name %></a></td>
+        <td><%= map.center %></td>
+        <td><%= map.elevation %></td>
+        <td><%= map.temperature %></td>
+        <td><%= map.zoom %></td>
+        <td><%= map.glaciar_rock %></td>
+        <td><%= link_to 'Show', map, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_map_path(map), class: "btn btn-info" %></td>
+        <td><%= link_to 'Destroy', map, method: :delete, data: { remote: true, confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

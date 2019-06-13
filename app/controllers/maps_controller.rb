@@ -24,7 +24,7 @@ class MapsController < ApplicationController
   end
 
   def my_maps
-    byebug
+    @current_user_maps = current_user.maps
   end
 
   def not_glaciar_rock
