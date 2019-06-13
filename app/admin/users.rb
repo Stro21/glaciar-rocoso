@@ -9,6 +9,7 @@ ActiveAdmin.register User do
     column :member_since do |user|
       time_ago_in_words(user.created_at)
     end
+    column :role
     actions
   end
 
