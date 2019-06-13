@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-  has_many :maps
+  has_many :maps, dependent: :destroy
   enum role: [:admin, :user]
   def add_role
     if self.role.nil?
