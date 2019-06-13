@@ -28,11 +28,11 @@ class MapsController < ApplicationController
   end
 
   def not_glaciar_rock
-    @maps = Map.all
+    @not_glaciar_rock_maps = Map.where(glaciar_rock: false)
   end
 
   def glaciar_rock
-    @maps = Map.all
+    @glaciar_rock_maps = Map.where(glaciar_rock: true)
   end
 
   # POST /maps
