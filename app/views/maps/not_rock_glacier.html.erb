@@ -1,7 +1,7 @@
-<% @title="Glaciar Rocks" %>
+<% @title="Not a Rock Glacier" %>
 <p id="notice"><%= notice %></p>
 
-<h1>Glaciar Rocks</h1>
+<h1>Not a Rock Glacier</h1>
 
 <table id="map" class="table">
   <thead>
@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @glaciar_rock_maps.each do |map| %>
+    <% @not_rock_glacier_maps.each do |map| %>
       <tr id="<%= map.id %>">
         <td><a href="<%= map.url %>"><%= map.name %></a></td>
         <td><%= map.center %></td>

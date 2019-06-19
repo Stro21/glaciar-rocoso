@@ -13,14 +13,14 @@ class Map < ApplicationRecord
     self.size = '640x640'
     set_url
     set_elevation
-    if self.glaciar_rock.nil?
-      self.glaciar_rock = false
+    if self.rock_glacier.nil?
+      self.rock_glacier = false
     end
     if self.name.nil? || self.name == ''
       if Map.last.nil?
         self.name = 'Mapa1'
       else
-        self.name = 'Mapa' + (Map.last.id - 1).to_s
+        self.name = 'Mapa' + (Map.last.id).to_s
       end
     end
     weather

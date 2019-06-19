@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'maps#index'
   get '/my_maps', to: 'maps#my_maps'
-  get 'glaciar_rock', to: 'maps#glaciar_rock'
-  get 'not_glaciar_rock', to: 'maps#not_glaciar_rock'
+  get 'rock_glacier', to: 'maps#rock_glacier'
+  get 'not_rock_glacier', to: 'maps#not_rock_glacier'
 end

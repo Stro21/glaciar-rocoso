@@ -19,22 +19,22 @@
           <a class="nav-link" href="/my_maps">My maps</a>
         </li>
       <% end %>
-      <% if current_page?(glaciar_rock_path) %>
+      <% if current_page?(rock_glacier_path) %>
         <li class="nav-item active">
-          <a class="nav-link" href="/glaciar_rock">Glaciar Rocks<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/rock_glacier">Glaciar Rocks<span class="sr-only">(current)</span></a>
         </li>
       <% else %>
         <li class="nav-item">
-          <a class="nav-link" href="/glaciar_rock">Glaciar Rocks</a>
+          <a class="nav-link" href="/rock_glacier">Glaciar Rocks</a>
         </li>
       <% end %>
-      <% if current_page?(not_glaciar_rock_path) %>
+      <% if current_page?(not_rock_glacier_path) %>
         <li class="nav-item active">
-          <a class="nav-link" href="/not_glaciar_rock">Is not a Glaciar Rock<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/not_rock_glacier">Is not a Glaciar Rock<span class="sr-only">(current)</span></a>
         </li>
       <% else %>
         <li class="nav-item">
-        <a class="nav-link" href="/not_glaciar_rock">Is not a Glaciar Rock</a>
+        <a class="nav-link" href="/not_rock_glacier">Is not a Glaciar Rock</a>
       </li>
       <% end %>
       <li class="nav-item dropdown">

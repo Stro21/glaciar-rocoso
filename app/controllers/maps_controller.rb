@@ -27,12 +27,12 @@ class MapsController < ApplicationController
     @current_user_maps = current_user.maps
   end
 
-  def not_glaciar_rock
-    @not_glaciar_rock_maps = Map.where(glaciar_rock: false)
+  def not_rock_glacier
+    @not_rock_glacier_maps = Map.where(rock_glacier: false)
   end
 
-  def glaciar_rock
-    @glaciar_rock_maps = Map.where(glaciar_rock: true)
+  def rock_glacier
+    @rock_glacier_maps = Map.where(rock_glacier: true)
   end
 
   # POST /maps
@@ -80,6 +80,6 @@ class MapsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:user_id, :latitude, :longitude, :zoom, :glaciar_rock, :name, :center)
+      params.require(:map).permit(:user_id, :latitude, :longitude, :zoom, :rock_glacier, :name, :center)
     end
 end
