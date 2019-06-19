@@ -1,4 +1,4 @@
-# Proyecto de Glaciares Rocos
+# Rock Glacier Finder
 
 Esta aplicación te permite poder agregar una foto satelital utilizando Google Maps, dándote la información de su latitud, longitud, altura y temperatura.
 
