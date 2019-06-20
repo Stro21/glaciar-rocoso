@@ -7,7 +7,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel 'Maps' do
           ul do
             li "Maps: #{Map.count}"
-            li "Glaciar Rocks: #{Map.select{ |x| x.glaciar_rock == true }.count}"
+            li "Rock Glaciers: #{Map.select{ |x| x.rock_glacier == true }.count}"
           end
         end
       end

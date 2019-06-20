@@ -1,5 +1,5 @@
 ActiveAdmin.register Map do
-  permit_params :center, :glaciar_rock, :user_id
+  permit_params :center, :rock_glacier, :user_id
 
   index do
     column :id
@@ -10,7 +10,7 @@ ActiveAdmin.register Map do
     column :temperature
     column :elevation
     column :zoom
-    column :glaciar_rock
+    column :rock_glacier
     column :user
     actions
   end
@@ -18,7 +18,7 @@ ActiveAdmin.register Map do
   form do |f|
     inputs 'Add a new map' do
       input :center
-      input :glaciar_rock
+      input :rock_glacier
       input :user
     end
     actions
@@ -26,7 +26,7 @@ ActiveAdmin.register Map do
 
   filter :temperature, as: :numeric
   filter :elevation, as: :numeric
-  filter :glaciar_rock, as: :select
+  filter :rock_glacier, as: :select
   filter :zoom, as: :numeric
   filter :user, as: :select
 end
