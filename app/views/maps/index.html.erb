@@ -27,12 +27,12 @@
         <td><%= map.zoom %></td>
         <td><%= map.rock_glacier %></td>
         <td><%= map.user.username %></td>
-        <td><%= link_to 'Show', map, class: "btn btn-info" %></td>
+        <td><%= link_to 'Show', map, class: "btn btn-primary" %></td>
         <% if can? :edit, map %>
-          <td><%= link_to 'Edit', edit_map_path(map), class: "btn btn-info" %></td>
+          <td><%= link_to 'Edit', edit_map_path(map), class: "btn btn-success" %></td>
         <% end %>
         <% if can? :destroy, map %>
-          <td><%= link_to 'Destroy', map, method: :delete, data: { remote: true, confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
+          <td><%= link_to 'Destroy', map, method: :delete, data: { remote: true, confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <% end %>
       </tr>
     <% end %>
