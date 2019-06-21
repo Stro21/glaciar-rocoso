@@ -25,9 +25,9 @@
         <td><%= map.temperature %></td>
         <td><%= map.zoom %></td>
         <td><%= map.rock_glacier %></td>
-        <td><%= link_to 'Show', map, class: "btn btn-info" %></td>
-        <td><%= link_to 'Edit', edit_map_path(map), class: "btn btn-info" %></td>
-        <td><%= link_to 'Destroy', map, method: :delete, data: { remote: true, confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
+        <td><%= link_to 'Show', map, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_map_path(map), class: "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', map, method: :delete, data: { remote: true, confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
